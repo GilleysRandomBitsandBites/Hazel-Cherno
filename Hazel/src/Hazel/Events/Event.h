@@ -1,9 +1,11 @@
 #pragma once
 
+
+#include "Hazel/pch.h"
+
 #include "Hazel/Core.h"
 
-#include <string>
-#include <functional>
+
 
 namespace Hazel {
 
