@@ -2,7 +2,6 @@
 
 
 #include "Hazel/Window.h"
-#include "Hazel/Log.h"
 
 #include <GLFW/glfw3.h>
 
