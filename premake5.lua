@@ -25,8 +25,8 @@ project "Hazel"
 	targetdir ("bin/" ..outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" ..outputdir .. "/%{prj.name}")
 
-	pchheader "pch.h"
-	pchsource "Hazel/src/pch.cpp"
+	pchheader "hzpch.h"
+	pchsource "Hazel/src/hzpch.cpp"
 
 	files
 	{
@@ -65,14 +65,17 @@ project "Hazel"
 
 	 filter "configuration.Debug"
 	     defines "HZ_DEBUG"
+		 buildoptions "/MDd"
 		 symbols "On"
 
 	 filter "configuration.Release"
 	     defines "HZ_RELEASE"
+		 buildoptions "/MD"
 		 optimize "On"
 
 	 filter "configuration.Dist"
 	     defines "HZ_DIST"
+		 buildoptions "/MD"
 		 optimize "On"
 
 project "Sandbox"
@@ -114,12 +117,15 @@ project "Sandbox"
 	
 	 filter "configuration.Debug"
 	     defines "HZ_DEBUG"
+		 buildoptions "/MDd"
 		 symbols "On"
 
 	 filter "configuration.Release"
 	     defines "HZ_RELEASE"
+		 buildoptions "/MD"
 		 optimize "On"
 
 	 filter "configuration.Dist"
 	     defines "HZ_DIST"
+		 buildoptions "MD"
 		 optimize "On"
