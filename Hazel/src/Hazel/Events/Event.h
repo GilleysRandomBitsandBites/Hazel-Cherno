@@ -50,6 +50,12 @@ namespace Hazel {
 			virtual int GetCategoryFlags() const = 0;
 			virtual std::string ToString() const { return GetName(); }
 
+			// This is code I wrote to handle the layerstack for loop in Application.cpp
+			inline bool Handled()
+			{
+				return m_Handled;
+			}
+
 			inline bool IsInCategory(EventCategory category)
 			{
 				return GetCategoryFlags() & category;

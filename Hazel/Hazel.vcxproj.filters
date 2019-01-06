@@ -13,6 +13,12 @@
     <Filter Include="Hazel\Platform\Windows">
       <UniqueIdentifier>{47A9AB1A-33A3-D46C-1C10-6B7D08A93AD9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hazel\imgui">
+      <UniqueIdentifier>{C345A29D-2FFB-1A93-B8EF-146A24A41197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hazel\maths">
+      <UniqueIdentifier>{E548E49D-51FE-5C93-DAF2-566A46A75397}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Hazel.h" />
