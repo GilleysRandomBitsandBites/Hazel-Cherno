@@ -74,6 +74,18 @@
     <ClInclude Include="src\Hazel\maths\vec2.h">
       <Filter>Hazel\maths</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hazel\keyboard.h">
+      <Filter>Hazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\maths\maths.h">
+      <Filter>Hazel\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\maths\vec3.h">
+      <Filter>Hazel\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\maths\vec4.h">
+      <Filter>Hazel\maths</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
@@ -102,6 +114,12 @@
     </ClCompile>
     <ClCompile Include="src\hzpch.cpp" />
     <ClCompile Include="src\Hazel\maths\vec2.cpp">
+      <Filter>Hazel\maths</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\maths\vec3.cpp">
+      <Filter>Hazel\maths</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\maths\vec4.cpp">
       <Filter>Hazel\maths</Filter>
     </ClCompile>
   </ItemGroup>

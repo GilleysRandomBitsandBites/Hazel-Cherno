@@ -135,6 +135,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Hazel\keyboard.h" />
     <ClInclude Include="src\Hazel.h" />
     <ClInclude Include="src\Hazel\Application.h" />
     <ClInclude Include="src\Hazel\Core.h" />
@@ -147,7 +148,10 @@
     <ClInclude Include="src\Hazel\Layer.h" />
     <ClInclude Include="src\Hazel\LayerStack.h" />
     <ClInclude Include="src\Hazel\Log.h" />
+    <ClInclude Include="src\Hazel\maths\maths.h" />
     <ClInclude Include="src\Hazel\maths\vec2.h" />
+    <ClInclude Include="src\Hazel\maths\vec3.h" />
+    <ClInclude Include="src\Hazel\maths\vec4.h" />
     <ClInclude Include="src\Hazel\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Hazel\Platform\OpenGL\imgui_impl_glfw.h" />
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsWindow.h" />
@@ -161,6 +165,8 @@
     <ClCompile Include="src\Hazel\LayerStack.cpp" />
     <ClCompile Include="src\Hazel\Log.cpp" />
     <ClCompile Include="src\Hazel\maths\vec2.cpp" />
+    <ClCompile Include="src\Hazel\maths\vec3.cpp" />
+    <ClCompile Include="src\Hazel\maths\vec4.cpp" />
     <ClCompile Include="src\Hazel\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Hazel\Platform\OpenGL\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Hazel\Platform\Windows\WindowsWindow.cpp" />

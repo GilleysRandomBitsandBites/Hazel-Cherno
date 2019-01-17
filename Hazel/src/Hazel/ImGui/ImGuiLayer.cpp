@@ -8,6 +8,7 @@
 #include <glad\glad.h>
 #include <GLFW\glfw3.h>
 
+#include "Hazel\keyboard.h"
 #include "Hazel\Application.h"
 
 namespace Hazel {
@@ -20,6 +21,24 @@ namespace Hazel {
 	ImGuiLayer::~ImGuiLayer()
 	{
 	}
+
+	/* const char* ImGui_ImplGlfw_GetClipboardText(void* user_data)
+	{
+		//ImGuiIO& io = ImGui::GetIO();
+		//io.SetClipboardTextFn = ImGui_ImplGlfw_SetClipboardText;
+		//io.GetClipboardTextFn = ImGui_ImplGlfw_GetClipboardText;
+		glfwGetClipboardString((GLFWwindow*)user_data);
+		return false;
+	}
+
+	 void ImGui_ImplGlfw_SetClipboardText(void* user_data, const char* text)
+	{
+		//ImGuiIO& io = ImGui::GetIO();
+		//io.SetClipboardTextFn = ImGui_ImplGlfw_SetClipboardText;
+		//io.GetClipboardTextFn = ImGui_ImplGlfw_GetClipboardText;
+		glfwSetClipboardString((GLFWwindow*)user_data, text);
+
+	}*/
 
 	
 
@@ -34,28 +53,32 @@ namespace Hazel {
 
 		
 
-		// Temporary: should eventually use Hazel key codes
-		io.KeyMap[ImGuiKey_Tab] = GLFW_KEY_TAB;
-		io.KeyMap[ImGuiKey_LeftArrow] = GLFW_KEY_LEFT;
-		io.KeyMap[ImGuiKey_RightArrow] = GLFW_KEY_RIGHT;
-		io.KeyMap[ImGuiKey_UpArrow] = GLFW_KEY_UP;
-		io.KeyMap[ImGuiKey_DownArrow] = GLFW_KEY_DOWN;
-		io.KeyMap[ImGuiKey_PageUp] = GLFW_KEY_PAGE_UP;
-		io.KeyMap[ImGuiKey_PageDown] = GLFW_KEY_PAGE_DOWN;
-		io.KeyMap[ImGuiKey_Home] = GLFW_KEY_HOME;
-		io.KeyMap[ImGuiKey_End] = GLFW_KEY_END;
-		io.KeyMap[ImGuiKey_Insert] = GLFW_KEY_INSERT;
-		io.KeyMap[ImGuiKey_Delete] = GLFW_KEY_DELETE;
-		io.KeyMap[ImGuiKey_Backspace] = GLFW_KEY_BACKSPACE;
-		io.KeyMap[ImGuiKey_Space] = GLFW_KEY_SPACE;
-		io.KeyMap[ImGuiKey_Enter] = GLFW_KEY_ENTER;
-		io.KeyMap[ImGuiKey_Escape] = GLFW_KEY_ESCAPE;
-		io.KeyMap[ImGuiKey_A] = GLFW_KEY_A;
-		io.KeyMap[ImGuiKey_C] = GLFW_KEY_C;
-		io.KeyMap[ImGuiKey_V] = GLFW_KEY_V;
-		io.KeyMap[ImGuiKey_X] = GLFW_KEY_X;
-		io.KeyMap[ImGuiKey_Y] = GLFW_KEY_Y;
-		io.KeyMap[ImGuiKey_Z] = GLFW_KEY_Z;
+		// Temporary: should eventually use Hazel key codes Have implemented Hazel codes
+		io.KeyMap[ImGuiKey_Tab] = HAZEL_KEY_TAB;
+		io.KeyMap[ImGuiKey_LeftArrow] = HAZEL_KEY_LEFT;
+		io.KeyMap[ImGuiKey_RightArrow] = HAZEL_KEY_RIGHT;
+		io.KeyMap[ImGuiKey_UpArrow] = HAZEL_KEY_UP;
+		io.KeyMap[ImGuiKey_DownArrow] = HAZEL_KEY_DOWN;
+		io.KeyMap[ImGuiKey_PageUp] = HAZEL_KEY_PAGE_UP;
+		io.KeyMap[ImGuiKey_PageDown] = HAZEL_KEY_PAGE_DOWN;
+		io.KeyMap[ImGuiKey_Home] = HAZEL_KEY_HOME;
+		io.KeyMap[ImGuiKey_End] = HAZEL_KEY_END;
+		io.KeyMap[ImGuiKey_Insert] = HAZEL_KEY_INSERT;
+		io.KeyMap[ImGuiKey_Delete] = HAZEL_KEY_DELETE;
+		io.KeyMap[ImGuiKey_Backspace] = HAZEL_KEY_BACKSPACE;
+		io.KeyMap[ImGuiKey_Space] = HAZEL_KEY_SPACE;
+		io.KeyMap[ImGuiKey_Enter] = HAZEL_KEY_ENTER;
+		io.KeyMap[ImGuiKey_Escape] = HAZEL_KEY_ESCAPE;
+		io.KeyMap[ImGuiKey_A] = HAZEL_KEY_A;
+		io.KeyMap[ImGuiKey_C] = HAZEL_KEY_C;
+		io.KeyMap[ImGuiKey_V] = HAZEL_KEY_V;
+		io.KeyMap[ImGuiKey_X] = HAZEL_KEY_X;
+		io.KeyMap[ImGuiKey_Y] = HAZEL_KEY_Y;
+		io.KeyMap[ImGuiKey_Z] = HAZEL_KEY_Z;
+
+		//io.SetClipboardTextFn = 0; //ImGui_ImplGlfw_SetClipboardText;
+		//io.GetClipboardTextFn = 0; // ImGui_ImplGlfw_GetClipboardText;
+		//io.ClipboardUserData = app.GetWindow();
 
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
@@ -92,7 +115,7 @@ namespace Hazel {
 		
 
 		// Poll for and process events
-		//glfwPollEvents();
+		//HAZELPollEvents();
 		
 		
 		
@@ -113,6 +136,24 @@ namespace Hazel {
 		
 
 	}
+
+	/* const char* ImGui_ImplGlfw_GetClipboardText(void* user_data)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		//io.SetClipboardTextFn = ImGui_ImplGlfw_SetClipboardText;
+		io.GetClipboardTextFn = ImGui_ImplGlfw_GetClipboardText;
+		glfwGetClipboardString((GLFWwindow*)user_data);
+		return false;
+	}
+
+	 void ImGui_ImplGlfw_SetClipboardText(void* user_data, const char* text)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		io.SetClipboardTextFn = ImGui_ImplGlfw_SetClipboardText;
+		//io.GetClipboardTextFn = ImGui_ImplGlfw_GetClipboardText;
+		glfwSetClipboardString((GLFWwindow*)user_data, text);
+		
+	}*/
 
 	bool ImGuiLayer::OnMouseButtonPressedEvent(MouseButtonPressedEvent & e)
 	{
@@ -152,10 +193,12 @@ namespace Hazel {
 		ImGuiIO& io = ImGui::GetIO();
 		io.KeysDown[e.GetKeyCode()] = true;
 
-		io.KeyCtrl = io.KeysDown[GLFW_KEY_LEFT_CONTROL] || io.KeysDown[GLFW_KEY_RIGHT_CONTROL];
-		io.KeyShift = io.KeysDown[GLFW_KEY_LEFT_SHIFT] || io.KeysDown[GLFW_KEY_RIGHT_SHIFT];
-		io.KeyAlt= io.KeysDown[GLFW_KEY_LEFT_ALT] || io.KeysDown[GLFW_KEY_RIGHT_ALT];
-		io.KeySuper = io.KeysDown[GLFW_KEY_LEFT_SUPER] || io.KeysDown[GLFW_KEY_RIGHT_SUPER];
+		io.KeyCtrl = io.KeysDown [HAZEL_KEY_LEFT_CONTROL] || io.KeysDown[HAZEL_KEY_RIGHT_CONTROL];
+		io.KeyShift = io.KeysDown[HAZEL_KEY_LEFT_SHIFT] || io.KeysDown[HAZEL_KEY_RIGHT_SHIFT];
+		io.KeyAlt= io.KeysDown[HAZEL_KEY_LEFT_ALT] || io.KeysDown[HAZEL_KEY_RIGHT_ALT];
+		io.KeySuper = io.KeysDown[HAZEL_KEY_LEFT_SUPER] || io.KeysDown[HAZEL_KEY_RIGHT_SUPER];
+
+		 
 
 		return false;
 	}
