@@ -19,6 +19,9 @@
     <Filter Include="Hazel\Platform\Windows">
       <UniqueIdentifier>{47A9AB1A-33A3-D46C-1C10-6B7D08A93AD9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hazel\Render">
+      <UniqueIdentifier>{E821B71B-D484-46C0-7D0A-7F76694C1243}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Hazel\maths">
       <UniqueIdentifier>{E548E49D-51FE-5C93-DAF2-566A46A75397}</UniqueIdentifier>
     </Filter>
@@ -67,17 +70,28 @@
     <ClInclude Include="src\Hazel\Platform\Windows\WindowsWindow.h">
       <Filter>Hazel\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hazel\Render\IndexBuffer.h">
+      <Filter>Hazel\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\Render\Renderer.h">
+      <Filter>Hazel\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\Render\Shader.h">
+      <Filter>Hazel\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\Render\VertexArray.h">
+      <Filter>Hazel\Render</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hazel\Window.h">
       <Filter>Hazel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\hzpch.h" />
-    <ClInclude Include="src\Hazel\maths\vec2.h">
-      <Filter>Hazel\maths</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\keyboard.h">
       <Filter>Hazel</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\maths\maths.h">
+      <Filter>Hazel\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hazel\maths\vec2.h">
       <Filter>Hazel\maths</Filter>
     </ClInclude>
     <ClInclude Include="src\Hazel\maths\vec3.h">
@@ -86,6 +100,9 @@
     <ClInclude Include="src\Hazel\maths\vec4.h">
       <Filter>Hazel\maths</Filter>
     </ClInclude>
+    <ClInclude Include="src\hzpch.h" />
+    <ClInclude Include="src\Hazel\Render\VertexBuffer.h" />
+    <ClInclude Include="src\Hazel\Render\VertexBufferLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hazel\Application.cpp">
@@ -112,7 +129,18 @@
     <ClCompile Include="src\Hazel\Platform\Windows\WindowsWindow.cpp">
       <Filter>Hazel\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\hzpch.cpp" />
+    <ClCompile Include="src\Hazel\Render\IndexBuffer.cpp">
+      <Filter>Hazel\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\Render\Renderer.cpp">
+      <Filter>Hazel\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\Render\Shader.cpp">
+      <Filter>Hazel\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hazel\Render\VertexArray.cpp">
+      <Filter>Hazel\Render</Filter>
+    </ClCompile>
     <ClCompile Include="src\Hazel\maths\vec2.cpp">
       <Filter>Hazel\maths</Filter>
     </ClCompile>
@@ -122,5 +150,7 @@
     <ClCompile Include="src\Hazel\maths\vec4.cpp">
       <Filter>Hazel\maths</Filter>
     </ClCompile>
+    <ClCompile Include="src\hzpch.cpp" />
+    <ClCompile Include="src\Hazel\Render\VertexBuffer.cpp" />
   </ItemGroup>
 </Project>

@@ -4,8 +4,15 @@
 
 
 #include "Hazel/Log.h"
+#include "Render\Shader.h"
 
 #include <glad\glad.h>
+#include "GLFW\glfw3.h"
+#include "Render\Renderer.h"
+#include "Render\VertexBufferLayout.h"
+#include "Render\IndexBuffer.h"
+#include "Render\VertexBuffer.h"
+#include "Render\VertexArray.h"
 
 
 namespace Hazel {
@@ -58,8 +65,8 @@ namespace Hazel {
 		}
 	}
 
-	
-
+	// Need filepath to shader Shader shader(filepath);
+	Renderer renderer;
 
 
 	void Application::Run()
@@ -68,10 +75,35 @@ namespace Hazel {
 
 		while (m_Running)
 		{
-			glClearColor(1, 0, 1, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			//glClearColor(1, 0, 1, 1);
+			renderer.Clear();
 
+			unsigned int indices[] = {
+				0, 1, 2,
+				2, 3, 0
+			};
+
+			void* positions;
+			VertexArray va;
+			VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+
+			VertexBufferLayout layout;
+			layout.Push<float>(2);
+			va.AddBuffer(vb, layout);
+
+			IndexBuffer ib(indices, 6);
+
+			//shader.Bind();
+			//shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
+
+			va.Unbind();
+			vb.Unbind();
+			ib.Unbind();
+			//shader.Unbind();
+
+			//VertexArray vb(positions, 4 * 2 * sizeof(float));
 			
+			//renderer.Draw(va, ib, shader);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
